@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Reveal } from './reveal'
-import { Logo } from './logo'
+import { Logo } from '../../../components/logo'
 import { GithubIcon, LinkedinIcon, XIcon } from './brand-icons'
 
 const columns = [

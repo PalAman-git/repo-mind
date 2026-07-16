@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react'
 import { motion } from 'motion/react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { Logo } from './logo'
+import { Logo } from '../../../components/logo'
 import { GithubIcon } from './brand-icons'
 
 const navLinks = [

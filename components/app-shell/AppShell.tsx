@@ -1,6 +1,11 @@
 import type { ReactNode } from "react";
 
-import { Sidebar } from "../sidebar/Sidebar";
+import {
+  SidebarInset,
+  SidebarProvider,
+} from "@/components/ui/sidebar";
+
+import { AppSidebar } from "../sidebar/Sidebar";
 import { Topbar } from "../topbar/Topbar";
 
 interface AppShellProps {
@@ -9,16 +14,18 @@ interface AppShellProps {
 
 export function AppShell({ children }: AppShellProps) {
   return (
-    <div className="flex h-screen bg-background text-foreground">
-      <Sidebar />
+    <SidebarProvider defaultOpen>
+      <AppSidebar />
 
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <SidebarInset className="bg-[#0D1117]">
         <Topbar />
 
-        <main className="flex-1 overflow-auto p-8">
-          {children}
+        <main className="flex-1 overflow-y-auto">
+          <div className="mx-auto w-full max-w-7xl p-8">
+            {children}
+          </div>
         </main>
-      </div>
-    </div>
+      </SidebarInset>
+    </SidebarProvider>
   );
 }

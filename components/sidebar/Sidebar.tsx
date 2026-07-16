@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import {
   LayoutDashboard,
@@ -9,6 +12,16 @@ import {
   Settings,
 } from "lucide-react";
 
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar";
+
 const navigation = [
   {
     title: "Dashboard",
@@ -16,12 +29,12 @@ const navigation = [
     icon: LayoutDashboard,
   },
   {
-    title: "Repository",
+    title: "Repositories",
     href: "/repository",
     icon: FolderGit2,
   },
   {
-    title: "Graph",
+    title: "Dependency Graph",
     href: "/graph",
     icon: Network,
   },
@@ -42,36 +55,50 @@ const navigation = [
   },
 ];
 
-export function Sidebar() {
+export function AppSidebar() {
+  const pathname = usePathname();
+
+  const isActive = (href:string) => pathname === href || pathname.startsWith(`${href}/`);
+
   return (
-    <aside className="hidden w-72 border-r border-border bg-card/40 backdrop-blur-xl lg:flex lg:flex-col">
-      <div className="border-b border-border px-6 py-6">
-        <h1 className="text-2xl font-bold tracking-tight">
-          RepoMind
-        </h1>
+    <Sidebar variant="inset" collapsible="icon">
+      <SidebarHeader>
+        <div className="flex items-center gap-3 px-2 py-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 font-bold text-white">
+            RM
+          </div>
 
-        <p className="mt-1 text-sm text-muted-foreground">
-          AI Software Intelligence
-        </p>
-      </div>
+          <div>
+            <h2 className="font-semibold">RepoMind</h2>
+            <p className="text-xs text-muted-foreground">
+              AI Repository Intelligence
+            </p>
+          </div>
+        </div>
+      </SidebarHeader>
 
-      <nav className="flex flex-1 flex-col gap-2 p-4">
-        {navigation.map((item) => {
-          const Icon = item.icon;
+      <SidebarContent>
+        <SidebarMenu>
+          {navigation.map((item) => {
+            const active = isActive(item.href)
 
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              <Icon size={18} />
+            return(<SidebarMenuItem key={item.href}>
+              <SidebarMenuButton
+                isActive={active}
+                tooltip={item.title}
+                render={<Link href={item.href} />}
+              >
+                <item.icon />
+                <span>{item.title}</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          )})}
+        </SidebarMenu>
+      </SidebarContent>
 
-              {item.title}
-            </Link>
-          );
-        })}
-      </nav>
-    </aside>
+      <SidebarFooter>
+        
+      </SidebarFooter>
+    </Sidebar>
   );
 }

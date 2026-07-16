@@ -1,3 +1,5 @@
+'use client'
+
 export function DashboardPage() {
   return (
     <section className="space-y-4">
