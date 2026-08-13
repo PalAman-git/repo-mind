@@ -33,7 +33,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <QueryProvider>
-        <body className="min-h-full flex flex-col">
+        <body className="min-h-full flex flex-col px-5">
           <TooltipProvider>
             {children}
           </TooltipProvider>
