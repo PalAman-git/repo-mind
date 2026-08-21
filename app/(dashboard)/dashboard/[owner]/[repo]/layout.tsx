@@ -8,20 +8,16 @@ export default function RepoLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-svh flex-col overflow-hidden">
-      {/* Full-width top bar */}
+    <div className="flex min-h-svh flex-col">
       <TopBar />
 
-      {/* Everything below the top bar */}
-      <div className="flex min-h-0 flex-1">
-        <SidebarProvider>
-          <AppSidebar />
+      <SidebarProvider className="min-h-0 flex-1">
+        <AppSidebar />
 
-          <main className="flex min-w-0 flex-1 flex-col overflow-auto">
-            {children}
-          </main>
-        </SidebarProvider>
-      </div>
+        <main className="min-w-0 flex-1">
+          {children}
+        </main>
+      </SidebarProvider>
     </div>
   );
 }

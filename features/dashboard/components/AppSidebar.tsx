@@ -65,22 +65,11 @@ export function AppSidebar() {
   const basePath = `/dashboard/${owner}/${repo}`;
 
   return (
-    <Sidebar collapsible="icon" className="top-14 h-[calc(100svh-3.5rem)]">
-      {/* Header */}
-      <SidebarHeader>
-        <SidebarMenu>
-          
-        </SidebarMenu>
-      </SidebarHeader>
-
+    <Sidebar collapsible="icon" className="top-14 h-[calc(100svh-3.5rem)] pt-7">
 
       {/* Navigation */}
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="text-sidebar-foreground/45">
-            Repository
-          </SidebarGroupLabel>
-
           <SidebarGroupContent>
             <SidebarMenu>
               {navigation.map((item) => {
