@@ -18,7 +18,7 @@ import { useState } from 'react'
 export default function LandingPage() {
   const [repoUrl,setRepoUrl] = useState('')
 
-  const {mutate,isPending} = useRepoIndexMutation();
+  const { mutate,isPending } = useRepoIndexMutation();
 
   const handleAnalyze = () => {
     if(!repoUrl.trim()) return;
