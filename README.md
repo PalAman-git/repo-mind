@@ -25,6 +25,7 @@ RepoMind allows users to connect a GitHub repository, browse its files, inspect 
 
 ## Project Structure
 
+```
 app/
 ├── (dashboard)/
 │   ├── layout.tsx
@@ -51,6 +52,7 @@ features/
 lib/
 ├── ...
 └── ...
+```
 
 ## Getting Started
 
