@@ -88,22 +88,15 @@ Make sure the backend is running before using repository-related functionality.
 The backend is responsible for interacting with GitHub and processing repository data.
 
 ## Roadmap
-
-[ ] Repository tree visualization
-
-[ ] Code search
-
-[ ] Repository-wide code analysis
-
-[ ] File dependency visualization
-
-[ ] Codebase impact analysis
-
-[ ] AI-powered repository questions
-
-[ ] SOLID/code-quality analysis
-
-[ ] Repository architecture visualization
+- [x] Get repo files content
+- [ ] Repository tree visualization
+- [ ] Code search
+- [ ] Repository-wide code analysis
+- [ ] File dependency visualization
+- [ ] Codebase impact analysis
+- [ ] AI-powered repository questions
+- [ ] SOLID/code-quality analysis
+- [ ] Repository architecture visualization
 
 ## License
 
