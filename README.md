@@ -23,6 +23,9 @@ RepoMind allows users to connect a GitHub repository, browse its files, inspect 
 - GitHub OAuth
 - REST API
 
+## References
+[chunking data strategy](https://community.databricks.com/t5/technical-blog/the-ultimate-guide-to-chunking-strategies-for-rag-applications/ba-p/113089)
+
 ## Project Structure
 
 ```
