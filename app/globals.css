@@ -28,6 +28,7 @@
     --color-destructive: var(--destructive);
     --color-accent-foreground: var(--accent-foreground);
     --color-accent: var(--accent);
+    --color-accent-hover:var(--accent-hover);
     --color-muted-foreground: var(--muted-foreground);
     --color-muted: var(--muted);
     --color-secondary-foreground: var(--secondary-foreground);
@@ -51,7 +52,7 @@
 
   :root { 
     color-scheme: dark;
-    --background: oklch(0.19 0.012 265);
+    --background: oklch(0.10 0.012 265);
     --foreground: oklch(0.97 0.005 260);
     --card: oklch(0.185 0.014 265);
     --card-foreground: oklch(0.97 0.005 260);
@@ -63,21 +64,14 @@
     --secondary-foreground: oklch(0.97 0.005 260);
     --muted: oklch(0.24 0.014 265);
     --muted-foreground: oklch(0.68 0.015 262);
-    --accent: oklch(0.72 0.15 210);
-    --accent-foreground: oklch(0.16 0.02 260);
+    --accent: oklch(0.62 0.14 55);
+    --accent-foreground: oklch(0.98 0.01 55);
+    --accent-hover:oklch(0.64 0.16 45);
     --destructive: oklch(0.62 0.22 25);
     --border: oklch(1 0 0 / 8%);
     --input: oklch(1 0 0 / 12%);
-    --ring: oklch(0.62 0.2 258);
-    --glow: oklch(0.62 0.2 258);
-    --glow-2: oklch(0.72 0.15 210);
-    --chart-1: oklch(0.62 0.2 258);
-    --chart-2: oklch(0.72 0.15 210);
-    --chart-3: oklch(0.7 0.16 155);
-    --chart-4: oklch(0.75 0.15 85);
-    --chart-5: oklch(0.65 0.2 25);
     --radius: 0.875rem;
-    --sidebar: oklch(0.185 0.014 265);
+    --sidebar: oklch(0.10 0.012 265);
     --sidebar-foreground: oklch(0.97 0.005 260);
     --sidebar-primary: oklch(0.62 0.2 258);
     --sidebar-primary-foreground: oklch(0.98 0.01 260);
@@ -123,6 +117,33 @@
     --sidebar-border: oklch(1 0 0 / 8%);
     --sidebar-ring: oklch(0.62 0.2 258);
   }
+
+  .textGradient{
+    background: linear-gradient(
+        to right,
+        #8f4e2a 20%,
+        #d9773f 35%,
+        #f0a064 50%,
+        #c45f32 70%,
+        #7a3f25 85%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* text-fill-color: transparent; */
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+  }
+
+  @keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+ 
 
   @layer base {
     * {
