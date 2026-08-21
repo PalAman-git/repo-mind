@@ -14,16 +14,24 @@ import { Button } from '@/components/ui/button'
 import { Field } from '@/components/ui/field'
 import { useRepoIndexMutation } from './hooks/useRepoIndexMutation'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+
 
 export default function LandingPage() {
   const [repoUrl,setRepoUrl] = useState('')
+  const router = useRouter();
 
-  const { mutate,isPending } = useRepoIndexMutation();
 
-  const handleAnalyze = () => {
+  
+
+  const handleAnalyze = async () => {
     if(!repoUrl.trim()) return;
 
-    mutate(repoUrl);
+    const url = new URL(repoUrl);
+    const [,owner,repo] = url.pathname.split('/');
+    router.push(`/dashboard/${owner}/${repo}`);
+
+    
     setRepoUrl('');
   }
 
@@ -66,11 +74,10 @@ export default function LandingPage() {
               <Button
                 size="lg"
                 onClick={handleAnalyze}
-                disabled={isPending}
                 className="h-14 rounded-lg px-8 bg-amber-50 text-gray-800 hover:bg-amber-50 cursor-pointer"
                 variant={'secondary'}
               >
-                {isPending ? 'Analyzing...' : 'Analyze'}
+                {'Analyze'}
               </Button>
             </Field>
 
