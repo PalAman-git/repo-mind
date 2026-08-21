@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RepoMind — Frontend
+
+The frontend for RepoMind, a developer tool that helps you explore and understand GitHub repositories through an interactive codebase interface.
+
+RepoMind allows users to connect a GitHub repository, browse its files, inspect source code, and understand the structure of the codebase from a single interface.
+
+## Features
+
+- 🔐 GitHub authentication
+- 📦 GitHub repository integration
+- 📁 Repository file and folder explorer
+- 📄 Source-code file viewer
+- 🔍 Navigate through repository structure
+- ⚡ Fast client-side navigation
+- 🖥️ Dashboard-based interface
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- GitHub OAuth
+- REST API
+
+## Project Structure
+
+app/
+├── (dashboard)/
+│   ├── layout.tsx
+│   └── ...
+│
+├── login/
+│   └── ...
+│
+├── repo/
+│   └── [owner]/
+│       └── [repo]/
+│           └── ...
+│
+└── ...
+
+components/
+├── ...
+└── ...
+
+features/
+├── ...
+└── ...
+
+lib/
+├── ...
+└── ...
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+git clone <repository-url>
+cd repo-mind
 
-```bash
+2. Install dependencies
+npm install
+
+3. Configure environment variables
+
+Create a .env.local file:
+
+NEXT_PUBLIC_API_URL=http://localhost:3000
+
+Add any other environment variables required by the authentication flow.
+
+4. Start the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The frontend will be available at:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3001
+Backend
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The frontend communicates with the RepoMind backend for authentication, GitHub repository data, and file contents.
 
-## Learn More
+Backend repository:
 
-To learn more about Next.js, take a look at the following resources:
+<backend-repository-url>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Make sure the backend is running before using repository-related functionality.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The backend is responsible for interacting with GitHub and processing repository data.
 
-## Deploy on Vercel
+## Roadmap
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[ ] Repository tree visualization
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[ ] Code search
+
+[ ] Repository-wide code analysis
+
+[ ] File dependency visualization
+
+[ ] Codebase impact analysis
+
+[ ] AI-powered repository questions
+
+[ ] SOLID/code-quality analysis
+
+[ ] Repository architecture visualization
+
+## License
+
+This project is currently under development.
